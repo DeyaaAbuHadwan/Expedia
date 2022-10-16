@@ -16,6 +16,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import DriverClasses.*;
+import io.qameta.allure.Allure;
 
 public class DriverMethods {
 	private WebDriver driver;
@@ -85,6 +86,6 @@ public class DriverMethods {
 		File SrcFile = scrShot.getScreenshotAs(OutputType.FILE);
 		File DestFile = new File(name + ".png");
 		FileUtils.copyFile(SrcFile, DestFile);
-//				Allure.addAttachment("ScreenShot", FileUtils.openInputStream(SrcFile));
+		Allure.addAttachment("ScreenShot", FileUtils.openInputStream(SrcFile));
 	}
 }
